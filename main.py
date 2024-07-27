@@ -1,5 +1,12 @@
 import streamlit as st
+import plotly.express as px
+import requests
 import pandas as pd
+
+
+def get_data(days):
+    pass
+
 
 
 st.title("Weather Forecast")
@@ -18,7 +25,9 @@ if days == 1:
 else:
     st.subheader(f"{option} for the next {days} days in {place}")
 
+dates = ["2020", "2021", "2022"]
+temp_points = [days * i for i in temp_points]
 
-# if data_type == "Temperature":
-#     fig = px.line(weather_data, x='date', y='temperature', labels={'date': 'Date', 'temperature': 'Temperature (C)'})
-#     st.plotly_chart(fig)
+fig = px.line(x=dates, y=temp_points, labels={"x": "Date ", "y": "Temperature (°C) "})
+
+st.plotly_chart(fig)
