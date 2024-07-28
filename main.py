@@ -3,7 +3,7 @@ import plotly.express as px
 from backend import get_data
 
 
-st.title("Weather Forecast")
+st.title("Weather Forecastio")
 
 place = st.text_input("Place:", value="Prague")
 
@@ -28,7 +28,7 @@ if place:
 
     # Temperature chart
     if option == "Temperature":
-        fig = px.line(x=dt_points, y=weather_data_points, labels={"x": "Date/time ", "y": "Temperature (°C) "})
+        fig = px.line(x=dt_points, y=weather_data_points, labels={"x": "Date and time ", "y": "Temperature (°C) "})
         st.plotly_chart(fig)
 
     # Sky conditions chart
