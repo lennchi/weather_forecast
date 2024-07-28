@@ -16,7 +16,7 @@ def get_data(place, days, data_type):
     data = []
     for i in range(days * 8):
         # Add datetime points
-        dt = response['list'][i]['dt_txt'] # [:-3]
+        dt = response['list'][i]['dt_txt']
         dt_points.append(dt)
 
         # Add temp or sky condition points
@@ -25,12 +25,17 @@ def get_data(place, days, data_type):
             temp_point = round(temp_raw / 10, 1)
             data.append(temp_point)
         else:
-            sky_point = response['list'][i]['weather'][0]['icon']
+            sky_point = response['list'][i]['weather'][0]['main']
             data.append(sky_point)
 
     return dt_points, data
 
 
 if __name__ == "__main__":
-    print(get_data("Příbram", 1, "Temperature"))
-    print(get_data("Liberec", 1, "Sky Conditions"))
+    data = get_data("Liberec", 1, "Sky Conditions")
+    weather_data = data[1]
+    print(weather_data)
+    sky_images = {"Clear": "img/clear.png", "Clouds": "img/cloud.png", "Rain": "img/rain.png",
+                  "Snow": "img/snow.png"}
+    icons = [sky_images[condition] for condition in weather_data]
+    print(icons)
