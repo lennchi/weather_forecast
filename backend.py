@@ -1,10 +1,12 @@
 import requests
+import streamlit as st
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
-api_key = os.getenv('API_KEY')
+# load_dotenv()
+# api_key = os.getenv('API_KEY')
 
+api_key = st.secrets["api_key"]
 
 def get_data(place, days, data_type):
     api_url = f"http://api.openweathermap.org/data/2.5/forecast?q={place}&appid={api_key}"

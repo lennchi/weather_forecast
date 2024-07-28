@@ -1,13 +1,9 @@
 import streamlit as st
 import plotly.express as px
-
-import requests
-import pandas as pd
 from backend import get_data
 
 
 st.title("Weather Forecast")
-
 
 place = st.text_input("Place:", value="Prague")
 
