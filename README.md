@@ -2,6 +2,10 @@
 
 ⚙️streamlit, requests, plotly
 
+⚡ getting data from APIs, building charts 
+
+ 
+
 This weather forecast app uses the Openweather API. 
 
 [Check out the app on Streamlit Share ➜](https://weather-forecastio.streamlit.app/)

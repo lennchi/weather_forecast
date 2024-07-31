@@ -57,7 +57,7 @@ if place:
 
             for i in range(0, nr_data_points, icons_per_row):
                 cols = st.columns(icons_per_row)
-                for col, dt_point, condition in zip(cols, dt_points[i:i + icons_per_row], weather_data_points[i:i + icons_per_row]):
+                for col, dt_point, condition in zip(cols, dt_points[i:i + icons_per_row],weather_data_points[i:i + icons_per_row]):
                     icon = sky_images.get(condition)
                     with col:
                         st.image(icon, width=88, caption=dt_point[:-3])
